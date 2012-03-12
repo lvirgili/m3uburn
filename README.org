@@ -1,0 +1,16 @@
+* m3uburn
+  Very simple function that burns the files in a m3u playlist to a
+  CD.
+
+  Usage exemple: m3uburn playlist.m3u
+  This burns a cd with the files in the playlist.m3u file.
+
+  To find out what is your writing device you can use the command
+  "wodim --devices". In my case /dev/cdrw is a symlink to the device
+  that has a name that is not intuitive.
+
+  The script uses the wodim and genisoimage programs that were native
+  in my mint intall.
+
+  The instructions to burn an image from the command line were found
+  here: https://help.ubuntu.com/community/CdDvd/Burning
