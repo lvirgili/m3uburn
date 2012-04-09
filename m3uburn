@@ -29,6 +29,7 @@ m3uburn() {
     eject
     read -p "Insert the media in the drive and press any key to continue" -n1 -s
     eject -t
+    echo ""
 
     file_list=`grep -v '#' $1`
     echo "Copying files to /tmp/music"
@@ -41,7 +42,7 @@ m3uburn() {
     unset IFS
 
     echo "Creating an iso of the songs"
-    genisoimage -r -J -o image.iso
+    genisoimage -r -J -o image.iso /tmp/music
 
     echo "Burning the iso"
     wodim dev=${dev} -v -data image.iso
